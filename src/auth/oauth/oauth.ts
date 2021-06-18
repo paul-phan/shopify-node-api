@@ -36,7 +36,7 @@ const ShopifyOAuth = {
     response: http.ServerResponse,
     shop: string,
     redirectPath: string,
-    isOnline = false,
+    isOnline = true,
   ): Promise<string> {
     Context.throwIfUninitialized();
     Context.throwIfPrivateApp('Cannot perform OAuth for private apps');
