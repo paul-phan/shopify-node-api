@@ -174,7 +174,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       topic: 'PRODUCTS_CREATE',
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -193,7 +192,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       topic: 'PRODUCTS_CREATE',
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -213,7 +211,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
       deliveryMethod: DeliveryMethod.EventBridge,
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -233,7 +230,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
       deliveryMethod: DeliveryMethod.PubSub,
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -252,7 +248,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       topic: 'PRODUCTS_CREATE',
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -272,7 +267,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
       deliveryMethod: DeliveryMethod.EventBridge,
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -292,7 +286,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
       deliveryMethod: DeliveryMethod.PubSub,
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -311,7 +304,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
       deliveryMethod: DeliveryMethod.EventBridge,
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -330,7 +322,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       topic: 'PRODUCTS_CREATE',
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook);
@@ -351,7 +342,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
         accessToken: 'some token',
         shop: 'shop1.myshopify.io',
         deliveryMethod: DeliveryMethod.EventBridge,
-        webhookHandler: genericWebhookHandler,
       };
       await ShopifyWebhooks.Registry.register(webhook);
     }).rejects.toThrow(ShopifyErrors.UnsupportedClientType);
@@ -367,7 +357,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
         accessToken: 'some token',
         shop: 'shop1.myshopify.io',
         deliveryMethod: DeliveryMethod.PubSub,
-        webhookHandler: genericWebhookHandler,
       };
       await ShopifyWebhooks.Registry.register(webhook);
     }).rejects.toThrow(ShopifyErrors.UnsupportedClientType);
@@ -382,7 +371,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
       deliveryMethod: 'Something else',
-      webhookHandler: genericWebhookHandler,
     };
 
     const result = await ShopifyWebhooks.Registry.register(webhook as RegisterOptions);
@@ -397,7 +385,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       topic: 'PRODUCTS_CREATE',
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
-      webhookHandler: undefined,
     };
     await ShopifyWebhooks.Registry.addHandler({path: '/webhooks', topic: 'PRODUCTS_CREATE', webhookHandler: genericWebhookHandler});
     await ShopifyWebhooks.Registry.register(webhook);
@@ -411,7 +398,6 @@ describe('ShopifyWebhooks.Registry.register', () => {
       topic: 'PRODUCTS_UPDATE',
       accessToken: 'some token',
       shop: 'shop1.myshopify.io',
-      webhookHandler: genericWebhookHandler,
     };
     await ShopifyWebhooks.Registry.addHandler({path: '/webhooks', topic: 'PRODUCTS_UPDATE', webhookHandler: genericWebhookHandler});
     await ShopifyWebhooks.Registry.register(webhook);
